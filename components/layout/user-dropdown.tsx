@@ -16,9 +16,8 @@ import {
 } from "@/components/ui/popover"
 import { AuthenticationInfo } from "@descope/node-sdk";
 import { useDescope, useUser } from "@descope/nextjs-sdk/client";
-export default function UserDropdown({ session }: { session: any }) {
+export default function UserDropdown({ sessionToken }: { sessionToken: string }) {
   // const { email, image } = session?.token || {};
-  const { sub } = session?.token || {};
   const [openPopover, setOpenPopover] = useState(false);
   
   const sdk = useDescope();
@@ -30,9 +29,9 @@ export default function UserDropdown({ session }: { session: any }) {
     window.location.reload();
   }
   
-  if (!sub || isUserLoading) return null;
-  const email = sub;
-  let name = user?.name || "";
+  if (isUserLoading) return null;
+  const email = user.userId;
+  let name = user.name || "";
   
   return (
     <div className="relative inline-block text-left">

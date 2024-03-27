@@ -6,14 +6,14 @@ import useScroll from "@/lib/hooks/use-scroll";
 // import { useSignInModal } from "./sign-in-modal";
 import UserDropdown from "./user-dropdown";
 import { AuthenticationInfo } from "@descope/node-sdk";
+import { useSession } from "@descope/nextjs-sdk/client";
 
-export default function NavBar({ session }: { session: any }) {
-  // const { SignInModal, setShowSignInModal } = useSignInModal();
+export default function NavBar() {
   const scrolled = useScroll(50);
+  const { isSessionLoading, sessionToken, isAuthenticated } = useSession();
 
   return (
     <>
-      {/* <SignInModal /> */}
       <div
         className={`fixed top-0 w-full flex justify-center ${
           scrolled
@@ -32,9 +32,10 @@ export default function NavBar({ session }: { session: any }) {
             ></Image> */}
             <p>Descope</p>
           </Link>
-          <div>
-            {session ? (
-              <UserDropdown session={session} />
+          {isSessionLoading ? null : (
+            <div>
+            {isAuthenticated ? (
+              <UserDropdown sessionToken={sessionToken} />
             ) : (
               <button
                 className="rounded-full border border-black bg-black p-1.5 px-4 text-sm text-white transition-all hover:bg-white hover:text-black"
@@ -46,6 +47,7 @@ export default function NavBar({ session }: { session: any }) {
               </button>
             )}
           </div>
+          )}
         </div>
       </div>
     </>
