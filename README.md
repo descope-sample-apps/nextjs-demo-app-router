@@ -1,5 +1,5 @@
-# Welcome to the Descope and NextJS App Router Template
-This is a sample consumer app built by Descope to showcase the Descope Flows functionality with NextJS. 
+# Welcome to the Descope and NextJS App Router Template: Building Blocks Included
+This is a sample consumer app built by Descope to showcase the Descope Flows functionality with NextJS. It also includes useful hooks, utilities, and components to get started.
 
 ## Set up
 In order to launch this app:
