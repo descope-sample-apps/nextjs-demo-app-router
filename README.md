@@ -1,3 +1,5 @@
+![Redme Logo](https://github.com/descope-sample-apps/nextjs-demo-app-router/assets/46854522/6f95c078-c944-4b72-bced-92742fbf7ff3)
+
 # Welcome to the Descope and NextJS App Router Template: Building Blocks Included
 This is a sample consumer app built by Descope to showcase the Descope Flows functionality with NextJS. It also includes useful hooks, utilities, and components to get started.
 
