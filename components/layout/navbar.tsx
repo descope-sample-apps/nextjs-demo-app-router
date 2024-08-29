@@ -5,7 +5,6 @@ import Link from "next/link";
 import useScroll from "@/lib/hooks/use-scroll";
 // import { useSignInModal } from "./sign-in-modal";
 import UserDropdown from "./user-dropdown";
-import { AuthenticationInfo } from "@descope/node-sdk";
 import { useSession } from "@descope/nextjs-sdk/client";
 
 export default function NavBar() {

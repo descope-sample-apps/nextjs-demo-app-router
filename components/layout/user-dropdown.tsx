@@ -14,7 +14,6 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
-import { AuthenticationInfo } from "@descope/node-sdk";
 import { useDescope, useUser } from "@descope/nextjs-sdk/client";
 export default function UserDropdown({ sessionToken }: { sessionToken: string }) {
   // const { email, image } = session?.token || {};
